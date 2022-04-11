@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login page</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>  
+      <script type="text/javascript">  
+          /* Function to Generat Captcha */  
+          function GenerateCaptcha() {  
+              var chr1 = Math.ceil(Math.random() * 10) + '';  
+              var chr2 = Math.ceil(Math.random() * 10) + '';  
+              var chr3 = Math.ceil(Math.random() * 10) + '';  
+    
+              var str = new Array(4).join().replace(/(.|$)/g, function () { return ((Math.random() * 36) | 0).toString(36)[Math.random() < .5 ? "toString" : "toUpperCase"](); });  
+              var captchaCode = str + chr1 + ' ' + chr2 + ' ' + chr3;  
+              document.getElementById("txtCaptcha").value = captchaCode  
+          }  
+    
+          /* Validating Captcha Function */  
+          function ValidCaptcha() {  
+              var str1 = removeSpaces(document.getElementById('txtCaptcha').value);  
+              var str2 = removeSpaces(document.getElementById('txtCompare').value);  
+    
+              if (str1 == str2) return true;  
+              return false;  
+          }  
+    
+          /* Remove spaces from Captcha Code */  
+          function removeSpaces(string) {  
+              return string.split(' ').join('');  
+          }  
+      </script>  
+    
+  </head>
+
+  <body onload="GenerateCaptcha();">
+    <nav>
+      <div class="logo">
+       <img src="./logo.png" height="50px" width="80px">
+      </div>
+   
+    <div class="help">
+      
+      <a href="index.html">Login</a>&nbsp;/
+      <a href="">Help</a>
+      </div> 
+  
+  </nav>
+      <br>
+      <div class="header2">
+        <p>Login to ICCCS</p>
+        
+        <img src="./icccs_logo.png" height="50px" width="85px">  
+      </div>
+      <br>
+      <br>
+      <br>
+    <div class="form">
+        
+        <form >
+            <input type="name" class="name" placeholder="User name">
+           
+            <input type="password" class="password" placeholder="Set Password"><br>
+            <div  class="outer-captcha" width="100px">
+              <div>Enter The Captcha Text:</div>
+              <div class= "inner-captcha" width="-1px">
+                <input type="text" size="10px" id="txtCaptcha"  style=" cursor:pointer;font-weight: bold;text-decoration: line-through; border-radius: 2px; font-family: Modern ;color:#a0a0a0; background-color: #0c0c0c;" />  &nbsp; &nbsp;
+              <input type="text"  size="10px" id="txtCompare" style=" font-weight: bold; border-radius: 2px; font-family: Modern" /> 
+              
+              <br> 
+              </div>  
+            <br><br>
+              <input type="button" id="btnrefresh" value="Refresh" onclick="GenerateCaptcha();" />  
+              <input id="btnValid" type="button" value="Check" onclick="alert(ValidCaptcha());" />  
+        
+              <br />  
+              <br />  
+          </div>  
+            <input type="submit" value="Create an Account" class="button" onClick="login()" />
+
+        </form>
+       
+    </div>
+    
+  
+    <br>
+    <br>
+    
+    <hr>
+    <footer>
+      <p><img src="./icccs_logo.png" height="20px" width="25px">
+      Copyright &copy; ICCCS-2022.</p>
+    </footer>
+    <script>function login()
+      {
+        var name = document.getElementById("name").value;
+       
+        var password = document.getElementById("password").value;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if(name =='')
+        {
+          alert("please enter user name.");
+        }
+        else if(password=='')
+        {
+              alert("enter the password");
+        }
+        else if(!filter.test(name))
+        {
+          alert("Enter valid email id.");
+        }
+        else if(password.length < 6 || password.length > 6)
+        {
+          alert("Password min and max length is 6.");
+        }
+        else
+        {
+      alert('Thank You for Login & You are Redirecting to Campuslife Website');
+      //Redirecting to other page or webste code or you can set your own html page.
+           window.location = "";
+          }
+      }
+      //Reset Inputfield code.
+      function clearFunc()
+      {
+        document.getElementById("name").value="";
+        document.getElementById("password").value="";
+      }</script>
+        
+  </body>
+</html>
