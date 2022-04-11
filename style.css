@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    background-color: white;
+}
+.form{
+    width:220px;
+    margin-top: -5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    padding: 10px;
+    margin: 2% auto 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.form .outer-captcha .inner-captcha{
+    
+    display: inline-flex;
+    
+  }
+  
+.name{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    outline: none;
+}
+.email{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    outline: none;
+}
+.password{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    outline: none;
+}
+.button{
+    color:darkcyan;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: black;
+    color: aqua;
+}
+
+nav img{
+    margin-left: 35px;
+   margin-top:15px;
+}
+nav .help{
+    
+    margin-left: 1000px;
+    margin-top: 35px;
+
+}
+nav{
+   display:flex; 
+   height: 50px; 
+}
+.header2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    
+    height: 55px;
+    background-color: rgba(0,0,0,0.2);
+}
+.header2 img{
+    margin-right: 8px;
+}
+
+footer{
+    text-align: center;
+    font-size: x-small;
+}
+@media screen {
+    
+}
+
