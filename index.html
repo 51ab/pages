@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title></title>
+  </head>
+
+  <body>
+    <nav>
+    <div class="logo">
+     <img src="./logo.png" height="50px" width="80px">
+    </div>
+ 
+  <div class="help">
+    
+    <a href="signin.html">Register</a>&nbsp;/
+    <a href="">Help</a>
+    </div> 
+
+</nav>
+    <br>
+    <div class="header2">
+      <p>Login to ICCCS</p>
+      
+      <img src="./icccs_logo.png" height="50px" width="85px">
+    
+      
+    </div>
+    
+   <br>
+   <br>
+    <div class="form">
+        
+        <form>
+         
+            <input type="email" class="email" placeholder="Email">
+            <input type="password" class="password" minlength="6" placeholder="Password"><br>
+            
+            <input type="submit" value="Login" class="button" onClick="login()" />
+            <hr>
+           
+           <p> <a href="">Forget Password ?</a> </p>
+           <p> <a href="signin.html">Create an Account/Sign In </a> </p>
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <hr>
+      <footer>
+        <p><img src="./icccs_logo.png" height="20px" width="25px">
+        Copyright &copy; ICCCS-2022.</p>
+      </footer>
+        
+
+        <script>function login()
+          {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(name =='')
+            {
+              alert("please enter user name.");
+            }
+            else if(password=='')
+            {
+                  alert("enter the password");
+            }
+            else if(!filter.test(name))
+            {
+              alert("Enter valid email id.");
+            }
+            else if(password.length < 6 || password.length > 6)
+            {
+              alert("Password min and max length is 6.");
+            }
+            else
+            {
+          alert('Thank You for Login & You are Redirecting to Campuslife Website');
+          //Redirecting to other page or webste code or you can set your own html page.
+               window.location = "";
+              }
+          }
+          //Reset Inputfield code.
+          function clearFunc()
+          {
+            document.getElementById("email").value="";
+            document.getElementById("password").value="";
+          }</script>
+   
+  </body>
+</html>
